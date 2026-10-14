@@ -26,6 +26,7 @@ services:
   blue:
     build: .
     image: my_app
+    restart: on-failure
     ports: ["8081:8080"]
     environment: &app_env
       DBHOST: mysql-db
@@ -40,6 +41,7 @@ services:
 
   pink:
     image: my_app
+    restart: on-failure
     ports: ["8082:8080"]
     environment:
       <<: *app_env
@@ -50,6 +52,7 @@ services:
 
   lime:
     image: my_app
+    restart: on-failure
     ports: ["8083:8080"]
     environment:
       <<: *app_env
